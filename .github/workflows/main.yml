@@ -19,8 +19,6 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0' 
-      - name: Install dependencies
-        run: dotnet restore UnitTestProject1\UnitTestProject1.csproj
 
       - name: Build project
         run: dotnet build UnitTestProject1\UnitTestProject1.csproj --configuration Release 
