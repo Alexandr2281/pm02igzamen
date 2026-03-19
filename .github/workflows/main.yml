@@ -5,7 +5,7 @@ name: CI Pipeline
 on:
   push:
     branches: [ main ]  
-  pull_request:
+  pull_request: 
     branches: [ main ] 
 
 jobs:
@@ -20,10 +20,10 @@ jobs:
         with:
           dotnet-version: '6.0' 
       - name: Install dependencies
-        run: dotnet restore  
+        run: dotnet restore UnitTestProject1\UnitTestProject1.csproj
 
       - name: Build project
-        run: dotnet build --configuration Release 
+        run: dotnet build UnitTestProject1\UnitTestProject1.csproj --configuration Release 
 
       - name: Run unit tests
-        run: dotnet test --no-build --logger trx 
+        run: dotnet test UnitTestProject1\UnitTestProject1.csproj --no-build --logger trx 
