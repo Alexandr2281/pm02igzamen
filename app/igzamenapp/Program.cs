@@ -90,13 +90,52 @@ class Program
         while (true)
         {
             Console.Write("Введите начальную точку маршрута (или 0 для выхода): ");
-            int startPoint = Convert.ToInt32(Console.ReadLine()) - 1;
+
+
+
+            int startPoint; 
+            do
+            {
+                string imput = Console.ReadLine();
+
+                if (int.TryParse(imput, out startPoint))
+                {
+                    if (startPoint >= 0)
+                    {
+                        startPoint--;
+                        break;
+                    }
+                    Console.WriteLine("число должно быть положительным.");
+                }
+                else { Console.WriteLine("ошибка валидации."); }
+
+
+            } while (true);
+
+
 
             if (startPoint == -1) break;
 
             Console.Write("Введите конечную точку маршрута (или 0 для выхода): ");
-            int endPoint = Convert.ToInt32(Console.ReadLine()) - 1;
+            int endPoint;
 
+            do
+            {
+                string imput = Console.ReadLine();
+
+                if (int.TryParse(imput, out endPoint))
+                {
+                    if (endPoint >= 0)
+                    {
+                        endPoint--;
+                        break;
+                    }
+                    Console.WriteLine("число должно быть положительным.");
+                }
+                else { Console.WriteLine("ошибка валидации."); }
+
+
+            } while (true);
             if (endPoint == -1) break;
 
            
