@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Работаем на Ubuntu VM
+    runs-on: ubuntu-latest 
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3  
@@ -18,10 +18,9 @@ jobs:
       - name: Set up .NET Core SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '4.8'  # Укажите нужную версию DotNet, соответствующую вашему проекту
-
+          dotnet-version: '4.6' 
       - name: Install dependencies
-        run: dotnet restore  # Установка зависимостей
+        run: dotnet restore  й
 
       - name: Build project
         run: dotnet build --configuration Release 
