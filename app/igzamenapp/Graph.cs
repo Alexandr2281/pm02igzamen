@@ -4,7 +4,7 @@ using System;
 public class Graph
 {
     public const int MAX_NODES = 100; 
-
+    
     public static double[] Dijkstra(double[,] graphMatrix, int startNode)
     {
         int n = graphMatrix.GetLength(0); 
@@ -56,5 +56,6 @@ public class Graph
             }
         }
         return distances;
+        // коментарий для ветки develop
     }
 }
